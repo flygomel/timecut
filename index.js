@@ -88,7 +88,7 @@ module.exports = function (config) {
       frameDirectory = path.join(config.frameCache, frameDirectory);
     }
     frameDirectory = path.resolve(path.parse(output).dir, frameDirectory);
-    outputPattern = path.resolve(frameDirectory, 'image-%09d.png');
+    outputPattern = path.resolve(frameDirectory, `image-%09d.${config.screenshotType === "jpeg" ? "jpg" : "png"}`);
   } else {
     outputPattern = '';
   }
